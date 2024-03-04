@@ -2,30 +2,28 @@
 
 namespace App\View\Components;
 
+use Closure;
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class TextInput extends Component
 {
     /**
      * Create a new component instance.
-     *
-     * @return void
      */
     public function __construct(
         public ?string $value = null,
         public ?string $name = null,
-        public ?string $placeholder = null
-    )
-    {
-        //
+        public ?string $placeholder = null,
+        public ?string $formRef = null
+    ) {
+
     }
 
     /**
      * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
      */
-    public function render()
+    public function render(): View|Closure|string
     {
         return view('components.text-input');
     }
